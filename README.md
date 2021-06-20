@@ -1,3 +1,12 @@
+**Osama Alali :- work on index.js, App.js And Profile in App.js**
+
+**Samer Odeh :- work on LoginButton, LogoutButton and Profile.js render information.**
+
+
+
+
+
+
 # Project Name : **can-of-books-frontend & can-of-books-backend**
 
 
