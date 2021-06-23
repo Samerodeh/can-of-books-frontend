@@ -6,7 +6,7 @@ export class UpdateBookForm extends Component {
         return (
             <div>
                  
-                  <Form  onSubmit={(e)=>this.props.updateBookForm}>
+                  <Form  onSubmit={(e)=>this.props.updateBookForm(e)}>
             
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label>Book Nane:</Form.Label>
