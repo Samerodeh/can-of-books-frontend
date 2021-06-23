@@ -24,6 +24,7 @@ export class Profile extends Component {
   }
 
   bookIndex = (indexBook) => {
+    console.log('bookIndex==',indexBook);
     this.setState({
       bookIndex: indexBook,
       showUpdateForm: !this.state.showUpdateForm,
@@ -35,10 +36,15 @@ export class Profile extends Component {
       flagAddBook: !this.state.flagAddBook,
     });
   };
+
+
   updateBookForm = (e) => {
-    e.preventDefault();
+   
+   e.preventDefault();
+   try{
+    console.log('Fornt Update==',this.state.bookIndex);
     const reqBody = {
-      userEmail: this.state.serverUrl,
+      userEmail: this.state.userEmail,
       bookName: this.state.bookName,
       discBook: this.state.description,
       bookStatus: this.state.status,
@@ -52,7 +58,11 @@ export class Profile extends Component {
           showUpdateForm: !this.state.showUpdateForm,
         });
       });
-  };
+    } catch(error){
+     console.log('UUUUUUUUUUUU',error.message); 
+    }
+  
+    };
 
   updateBookName = (bookName) => {
     this.setState({
@@ -103,6 +113,8 @@ export class Profile extends Component {
       });
   };
   deleteBook = (index) => {
+
+     console.log('Index======',index);
     axios
       .delete(
         `${this.state.serverUrl}/book/${index}?userEmail=${this.state.userEmail}`
